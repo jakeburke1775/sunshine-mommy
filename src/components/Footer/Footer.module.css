@@ -6,7 +6,6 @@
 }
 
 .footer__content {
-  color: #fff;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -15,6 +14,7 @@
 }
 
 .footer__content p {
+  color: #ffffff;
   margin: 0;
 }
 

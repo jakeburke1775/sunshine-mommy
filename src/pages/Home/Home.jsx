@@ -4,8 +4,9 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <h1>Sunshine Mommy</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>The perfect gift for expecting mothers - whether you're treating yourself or surprising someone special. Our carefully curated Mommy Box celebrates the amazing woman bringing new life into the world.</p>
+      <p>Each box is thoughtfully packed with comfort essentials for the hospital stay, complete with a personalized handwritten note. Because while everyone focuses on baby, we believe mama deserves to be pampered too.</p>
+      <button className={styles.orderButton}>Order Now</button>
     </div>
   );
 };

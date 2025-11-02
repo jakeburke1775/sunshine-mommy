@@ -10,3 +10,4 @@ export default defineConfig({
     port: 3000  // Use port 3000 (like your homepage project)
   }
 })
+

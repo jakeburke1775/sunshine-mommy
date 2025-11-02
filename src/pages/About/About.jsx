@@ -4,8 +4,12 @@ const About = () => {
   return (
     <div className={styles.about}>
       <h1>About Us</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-      <p>Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.</p>
+      <p>Sunshine Mommy was born from a simple observation: while every expecting family receives countless gifts for baby, the incredible woman going through pregnancy and childbirth often gets overlooked.</p>
+      
+      <p>Founded by mothers who've been there, we understand that hospital bag checklists focus on necessities - but what about the little luxuries that make those precious first days more comfortable?</p>
+      
+      <p>Our Mommy Box is carefully curated with comfort items and thoughtful touches designed specifically for the expecting mother. Whether you're treating yourself or gifting to someone special, our mission is to bring a little sunshine to every mama's journey.</p>
+      <p>Thank you for letting us be part of your special moment. Here's to celebrating the amazing women bringing new life into the world!</p>
     </div>
   );
 };

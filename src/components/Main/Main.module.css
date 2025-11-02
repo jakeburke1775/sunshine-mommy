@@ -8,10 +8,6 @@
   overflow-x: hidden;
 }
 
-/* @media screen and (max-width: 480px) {
-  .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  }
-} */
+p {
+  color: #935e43;
+}
