@@ -3,9 +3,9 @@ import styles from './Footer.module.css';
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.content}>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam, purus sit amet luctus suscipit, ligula ipsum commodo mauris, at tempor enim magna id dolor. Nulla facilisi. Praesent congue erat at massa.</p>
-        <p>&copy; 2025 React Starter Template. All rights reserved.</p>
+      <div className={styles.footer__content}>
+        <p>&copy; {new Date().getFullYear()} Sunshine Mommy. All rights reserved.</p>
+        <p className={styles.footer__jakes_domain}>Made with jakes-domain.com</p>
       </div>
     </footer>
   );

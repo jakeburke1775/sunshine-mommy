@@ -1,8 +1,17 @@
 .main {
-  border: 2px dotted #666;
+  /* background-color: #fff; */
+  width: 90%;
   padding: 20px;
-  margin-bottom: 20px;
-  background-color: #ffffff;
-  min-height: 400px;
+  margin: 0 auto;
   flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
+
+/* @media screen and (max-width: 480px) {
+  .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  }
+} */

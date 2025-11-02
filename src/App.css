@@ -1,10 +1,10 @@
 .app {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0;
+  overflow: hidden;
 }
 
 /* Global styles for the app layout */
@@ -20,5 +20,4 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
 }

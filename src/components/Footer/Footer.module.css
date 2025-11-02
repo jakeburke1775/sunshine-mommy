@@ -1,19 +1,40 @@
 .footer {
-  border: 2px dotted #999;
-  padding: 20px;
-  background-color: #f1f3f4;
   text-align: center;
-  margin-top: auto;
+  width: 100%;
+  background-color: #935e43;
+  padding: 4px;
 }
 
-.content {
-  color: #666;
-  line-height: 1.6;
+.footer__content {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
 }
 
-.content p:last-child {
+.footer__content p {
+  margin: 0;
+}
+
+.footer__content p:first-child {
+  margin-top: 0;
   margin-bottom: 0;
   font-size: 0.9em;
-  margin-top: 15px;
-  color: #888;
+  font-weight: 400;
+}
+
+.footer__jakes_domain {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.5em;
+  color: #dcdcdc;
+  font-weight: 100;
+}
+
+@media screen and (max-width: 480px) {
+  .footer__content {
+    font-size: 0.6em;
+  }
 }
