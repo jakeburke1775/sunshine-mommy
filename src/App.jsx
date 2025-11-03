@@ -6,8 +6,15 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import './App.css'
+import { useCacheBuster } from './utils/cache-buster';
 
 function App() {
+
+  useCacheBuster({ 
+    verbose: import.meta.env.DEV,
+    updateCSS: true,
+  });
+
   return (
     <Router>
       <div className="app">
