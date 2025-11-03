@@ -4,7 +4,7 @@
   flex-direction: column;
   margin: 0 auto;
   padding: 0;
-  background-image: url('/SunshineConcept01.png');
+  background-image: url('/sunshine-mommy/SunshineConcept01.png');
   background-size: 1040px; /* Keep original image size */
   background-position: calc(100% + 100px) calc(100% + 100px); /* Push image 100px off-screen bottom-right */
   background-repeat: no-repeat;
