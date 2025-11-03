@@ -1,15 +1,14 @@
 .app {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   padding: 0;
-  overflow: hidden;
-  background-image: url('/sunshine-mommy/SunshineConcept01.png');
+  background-image: url('/SunshineConcept01.png');
   background-size: 1040px; /* Keep original image size */
   background-position: calc(100% + 100px) calc(100% + 100px); /* Push image 100px off-screen bottom-right */
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll; /* Changed from fixed to scroll for better mobile compatibility */
 }
 
 @media screen and (max-width: 950px) {
@@ -26,6 +25,16 @@
   }
 }
 
+/* iPhone and mobile specific fixes */
+@media screen and (max-width: 480px) {
+  .app {
+    background-attachment: scroll; /* Ensure scroll attachment on mobile */
+    background-size: 500px;
+    min-height: 100vh;
+    height: auto; /* Allow content to determine height */
+  }
+}
+
 /* Global styles for the app layout */
 * {
   box-sizing: border-box;
@@ -35,7 +44,6 @@ body {
   justify-content: center;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

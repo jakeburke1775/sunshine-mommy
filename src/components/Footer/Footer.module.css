@@ -3,6 +3,9 @@
   width: 100%;
   background-color: #935e43;
   padding: 4px;
+  margin-top: auto; /* Push footer to bottom */
+  position: relative;
+  z-index: 10; /* Ensure footer is above background */
 }
 
 .footer__content {

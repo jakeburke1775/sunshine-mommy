@@ -5,35 +5,23 @@ const Contact = () => {
   return (
     <div className={styles.contact}>
       <h1>Contact Us</h1>
+      <p> Click to copy or navigate.</p>
       
       <div className={styles.contactInfo}>
-        <div className={styles.contactItem}>
+        <a href="tel:+15551232626" className={styles.contactItem}>
           <h3><Phone size={20} /> Phone</h3>
           <p>(555) 123-MAMA</p>
-        </div>
+        </a>
         
-        <div className={styles.contactItem}>
+        <a href="mailto:hello@sunshinemommy.com" className={styles.contactItem}>
           <h3><Mail size={20} /> Email</h3>
           <p>hello@sunshinemommy.com</p>
-        </div>
-      </div>
-      
-      <div className={styles.socialSection}>
-        <h3>Follow Us</h3>
-        <div className={styles.socialIcons}>
-          <a href="#" className={styles.socialIcon}>
-            <Facebook size={20} /> Facebook
-          </a>
-          <a href="#" className={styles.socialIcon}>
-            <Instagram size={20} /> Instagram
-          </a>
-          <a href="#" className={styles.socialIcon}>
-            <Twitter size={20} /> Twitter
-          </a>
-          <a href="#" className={styles.socialIcon}>
-            <PinIcon size={20} /> Pinterest
-          </a>
-        </div>
+        </a>
+        
+        <a href="https://instagram.com/sunshinemommy" target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
+          <h3><Instagram size={20} /> Instagram</h3>
+          <p>@sunshinemommy</p>
+        </a>
       </div>
     </div>
   );
