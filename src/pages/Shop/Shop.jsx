@@ -7,50 +7,55 @@ const stripePromise = loadStripe('pk_test_51SOqWZEORaL8eBQaFf3Xe7BXtL42ZZK252Cd6
 
 const Shop = () => {
   const [loading, setLoading] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState('standard');
 
   const products = [
     {
       id: 'petite',
-      name: 'The Petite Mommy Box',
-      price: '$110.00',
+      name: 'Petite',
+      fullName: 'The Petite Mommy Box',
+      price: '$110',
+      image: '/sunshine-mommy/petite-box.jpg',
       features: [
-        'Cozy slippers for comfort',
-        'Cooling pads for relief',
-        'Nourishing lip balm',
-        'Beautiful bracelet',
-        'Luxurious body lotion',
-        'Soft scrunchie',
-        'Comfortable headband',
-        'Facial roller for self-care',
+        'Cozy slippers',
+        'Cooling pads',
+        'Lip balm',
+        'Bracelet',
+        'Body lotion',
+        'Scrunchie',
+        'Headband',
+        'Facial roller',
       ],
-      paymentUrl: 'https://buy.stripe.com/test_eVq28rebJ5Zl9AE1ro6Na00',
-      popular: false
+      paymentUrl: 'https://buy.stripe.com/test_eVq28rebJ5Zl9AE1ro6Na00'
     },
     {
       id: 'standard',
-      name: 'The Mommy Box',
-      price: '$150.00',
+      name: 'Mommy Box',
+      fullName: 'The Mommy Box',
+      price: '$150',
+      image: '/sunshine-mommy/mommy-box.jpg',
       features: [
-        'Everything in Petite Box',
-        'Soothing aromatherapy candle',
-        'Nourishing tummy butter',
-        'Extra cooling pads for comfort',
+        'Everything in Petite',
+        'Aromatherapy candle',
+        'Tummy butter',
+        'Extra cooling pads',
       ],
       paymentUrl: 'https://buy.stripe.com/test_6oU8wP2t187t8wAda66Na01',
       popular: true
     },
     {
       id: 'deluxe',
-      name: 'The Deluxe Mommy Box',
-      price: '$185.00',
+      name: 'Deluxe',
+      fullName: 'The Deluxe Mommy Box',
+      price: '$185',
+      image: '/sunshine-mommy/deluxe-box.jpg',
       features: [
         'Everything in Mommy Box',
-        'Luxurious spa-quality robe',
-        'Premium insulated tumbler',
-        'Personalized handwritten note',
+        'Spa-quality robe',
+        'Premium tumbler',
+        'Handwritten note',
       ],
-      paymentUrl: 'https://buy.stripe.com/test_3cI00j1oX87tdQU7PM6Na02',
-      popular: false
+      paymentUrl: 'https://buy.stripe.com/test_3cI00j1oX87tdQU7PM6Na02'
     }
   ];
 
@@ -59,44 +64,60 @@ const Shop = () => {
     window.location.href = paymentUrl;
   };
 
+  const selectedProductData = products.find(p => p.id === selectedProduct);
+
   return (
     <div className={styles.shop}>
-      <h1>Choose Your Sunshine Mommy Box</h1>
+      <h1>Choose Your Box</h1>
       
-      <div className={styles.productsContainer}>
+      {/* Product Selector */}
+      <div className={styles.productSelector}>
         {products.map((product) => (
-          <div key={product.id} className={`${styles.productCard} ${product.popular ? styles.popular : ''}`}>
-            {product.popular && <div className={styles.popularBadge}>Most Popular</div>}
-            
-            <div className={styles.productInfo}>
-              <h2>{product.name}</h2>
-              
-              <div className={styles.features}>
-                <h3>What's Inside:</h3>
-                <ul>
-                  {product.features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
-              </div>
-              
-              <div className={styles.pricing}>
-                <span className={styles.price}>{product.price}</span>
-                <span className={styles.shipping}>+ Free Shipping</span>
-              </div>
-              
-              <button 
-                className={styles.orderButton}
-                onClick={() => handleOrderNow(product.paymentUrl)}
-                disabled={loading}
-              >
-                {loading ? 'Processing...' : `Order ${product.name}`}
-              </button>
-            </div>
-          </div>
+          <button
+            key={product.id}
+            className={`${styles.selectorButton} ${selectedProduct === product.id ? styles.active : ''} ${product.popular ? styles.popular : ''}`}
+            onClick={() => setSelectedProduct(product.id)}
+          >
+            <span className={styles.productName}>{product.name}</span>
+            <span className={styles.productPrice}>{product.price}</span>
+            {product.popular && <span className={styles.popularTag}>Most Popular</span>}
+          </button>
         ))}
       </div>
-      
+
+      {/* Selected Product Details */}
+      <div className={styles.productDetails}>
+        <h2>{selectedProductData.fullName}</h2>
+        <img 
+          src={selectedProductData.image} 
+          alt={selectedProductData.fullName}
+          className={styles.productImage}
+        />
+        
+        <div className={styles.features}>
+          <h3>What's Inside:</h3>
+          <ul className={selectedProductData.features.length > 4 ? styles.twoColumns : styles.oneColumn}>
+            {selectedProductData.features.map((feature, index) => (
+              <li key={index}>{feature}</li>
+            ))}
+          </ul>
+        </div>
+        
+        <div className={styles.orderSection}>
+          <div className={styles.pricing}>
+            <span className={styles.price}>{selectedProductData.price}</span>
+            <span className={styles.shipping}>+ Free Shipping</span>
+          </div>
+          
+          <button 
+            className={styles.orderButton}
+            onClick={() => handleOrderNow(selectedProductData.paymentUrl)}
+            disabled={loading}
+          >
+            {loading ? 'Processing...' : `Order ${selectedProductData.fullName}`}
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

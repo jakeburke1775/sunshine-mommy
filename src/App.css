@@ -1,5 +1,5 @@
 .app {
-  height: 100vh;
+  min-height: 100vh; /* Use min-height for flexibility */
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -10,6 +10,15 @@
   background-repeat: no-repeat;
   background-attachment: fixed; /* Keep background fixed */
   overflow: hidden; /* Prevent app container scroll */
+}
+
+/* Mobile specific app adjustments */
+@media screen and (max-width: 768px) {
+  .app {
+    height: auto; /* Allow expansion on mobile */
+    min-height: 100vh;
+    overflow: visible; /* Allow scrolling on mobile */
+  }
 }
 
 @media screen and (max-width: 950px) {
@@ -33,6 +42,14 @@
   overflow-x: hidden;
 }
 
+/* Mobile main content adjustments */
+@media screen and (max-width: 768px) {
+  .app main {
+    flex: none; /* Don't constrain height on mobile */
+    overflow: visible; /* Allow natural flow on mobile */
+  }
+}
+
 /* Footer - sticky at bottom */
 .app footer {
   position: sticky;
@@ -45,7 +62,8 @@
   .app {
     background-attachment: fixed; /* Keep fixed for better mobile experience */
     background-size: 500px;
-    height: 100vh; /* Maintain viewport height */
+    min-height: 100vh; /* Use min-height instead of fixed height */
+    height: auto; /* Allow app to expand */
   }
 }
 
@@ -65,4 +83,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   overflow: hidden; /* Prevent body scroll */
+}
+
+/* Mobile body adjustments */
+@media screen and (max-width: 768px) {
+  body {
+    height: auto; /* Allow body to expand on mobile */
+    min-height: 100vh;
+    overflow: auto; /* Allow scrolling on mobile */
+  }
 }
