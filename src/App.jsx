@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
+import Shop from './pages/Shop/Shop';
 import './App.css'
 import { useCacheBuster } from './utils/cache-buster';
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/shop" element={<Shop />} />
           </Routes>
         </Main>
         <Footer />

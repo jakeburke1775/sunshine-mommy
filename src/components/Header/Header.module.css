@@ -31,4 +31,8 @@
   .nav {
     gap: 24px;
   }
+
+  .header {
+    padding: 10px;
+  }
 }

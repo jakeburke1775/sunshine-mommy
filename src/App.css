@@ -1,5 +1,5 @@
 .app {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -8,7 +8,8 @@
   background-size: 1040px; /* Keep original image size */
   background-position: calc(100% + 100px) calc(100% + 100px); /* Push image 100px off-screen bottom-right */
   background-repeat: no-repeat;
-  background-attachment: scroll; /* Changed from fixed to scroll for better mobile compatibility */
+  background-attachment: fixed; /* Keep background fixed */
+  overflow: hidden; /* Prevent app container scroll */
 }
 
 @media screen and (max-width: 950px) {
@@ -25,13 +26,26 @@
   }
 }
 
+/* Main content area - scrollable */
+.app main {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Footer - sticky at bottom */
+.app footer {
+  position: sticky;
+  bottom: 0;
+  flex-shrink: 0;
+}
+
 /* iPhone and mobile specific fixes */
 @media screen and (max-width: 480px) {
   .app {
-    background-attachment: scroll; /* Ensure scroll attachment on mobile */
+    background-attachment: fixed; /* Keep fixed for better mobile experience */
     background-size: 500px;
-    min-height: 100vh;
-    height: auto; /* Allow content to determine height */
+    height: 100vh; /* Maintain viewport height */
   }
 }
 
@@ -49,4 +63,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  overflow: hidden; /* Prevent body scroll */
 }
