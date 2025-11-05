@@ -1,24 +1,14 @@
 .app {
-  min-height: 100vh; /* Use min-height for flexibility */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   padding: 0;
   background-image: url('/sunshine-mommy/SunshineConcept01.png');
-  background-size: 1040px; /* Keep original image size */
-  background-position: calc(100% + 100px) calc(100% + 100px); /* Push image 100px off-screen bottom-right */
+  background-size: 1040px;
+  background-position: calc(100% + 100px) calc(100% + 100px);
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Keep background fixed */
-  overflow: hidden; /* Prevent app container scroll */
-}
-
-/* Mobile specific app adjustments */
-@media screen and (max-width: 768px) {
-  .app {
-    height: auto; /* Allow expansion on mobile */
-    min-height: 100vh;
-    overflow: visible; /* Allow scrolling on mobile */
-  }
+  background-attachment: fixed;
 }
 
 @media screen and (max-width: 950px) {
@@ -35,26 +25,9 @@
   }
 }
 
-/* Main content area - scrollable */
+/* Main content area */
 .app main {
   flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-/* Mobile main content adjustments */
-@media screen and (max-width: 768px) {
-  .app main {
-    flex: none; /* Don't constrain height on mobile */
-    overflow: visible; /* Allow natural flow on mobile */
-  }
-}
-
-/* Footer - sticky at bottom */
-.app footer {
-  position: sticky;
-  bottom: 0;
-  flex-shrink: 0;
 }
 
 /* iPhone and mobile specific fixes */
@@ -81,15 +54,4 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
-  overflow: hidden; /* Prevent body scroll */
-}
-
-/* Mobile body adjustments */
-@media screen and (max-width: 768px) {
-  body {
-    height: auto; /* Allow body to expand on mobile */
-    min-height: 100vh;
-    overflow: auto; /* Allow scrolling on mobile */
-  }
 }

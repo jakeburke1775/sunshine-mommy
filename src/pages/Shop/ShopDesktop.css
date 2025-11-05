@@ -1,0 +1,37 @@
+/* Desktop-specific styles for Shop component */
+@media (min-width: 1001px) {
+  .shop {
+    padding: 20px;
+    max-width: 600px;
+  }
+  
+  .shop h1 {
+    font-size: 24px;
+  }
+  
+  .product-details h2 {
+    font-size: 20px;
+  }
+  
+  .product-image {
+    max-width: 300px;
+    height: 180px;
+  }
+  
+  .features h3 {
+    font-size: 17px;
+  }
+  
+  .features li {
+    font-size: 14px;
+  }
+  
+  .price {
+    font-size: 30px;
+  }
+  
+  .order-button {
+    font-size: 16px;
+    padding: 16px 20px;
+  }
+}

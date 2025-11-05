@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import './Shop.css';
+import './ShopMobile.css';
+import './ShopDesktop.css';
 
 // Initialize Stripe with your publishable key
 const stripePromise = loadStripe('pk_test_51SOqWZEORaL8eBQaFf3Xe7BXtL42ZZK252Cd6XSZDMS89k4YR0B4vbXcRc2JR8vwR5A5FzcFSJZLnE0gtfspPDU1008vOtc9xm');
@@ -30,7 +32,7 @@ const Shop = () => {
     },
     {
       id: 'standard',
-      name: 'Mommy Box',
+      name: 'Mommy',
       fullName: 'The Mommy Box',
       price: '$150',
       image: '/sunshine-mommy/mommy-box.jpg',
@@ -104,10 +106,10 @@ const Shop = () => {
         </div>
         
         <div className="order-section">
-          <div className="pricing">
+          {/* <div className="pricing">
             <span className="price">{selectedProductData.price}</span>
             <span className="shipping">+ Free Shipping</span>
-          </div>
+          </div> */}
           
           <button 
             className="order-button"

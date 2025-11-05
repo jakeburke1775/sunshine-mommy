@@ -1,5 +1,5 @@
 .header {
-  padding: 20px;
+  padding: 12px;
 }
 
 .nav {
@@ -27,12 +27,17 @@
   color: white;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .nav {
-    gap: 24px;
+    gap: 16px;
   }
 
   .header {
-    padding: 10px;
+    padding: 6px;
+  }
+  
+  .nav__link {
+    padding: 6px 12px;
+    font-size: 14px;
   }
 }

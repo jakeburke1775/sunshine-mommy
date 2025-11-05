@@ -1,0 +1,40 @@
+/* Mobile-specific adjustments for Shop component */
+@media (max-width: 768px) {
+  .shop {
+    padding: 10px;
+    gap: 12px;
+  }
+  
+  .shop h1 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .product-details {
+    padding: 12px;
+  }
+  
+  .product-details h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .product-image {
+    max-width: 200px;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+  
+  .features {
+    margin-bottom: 15px;
+  }
+  
+  .order-section {
+    gap: 10px;
+  }
+  
+  .order-button {
+    padding: 12px 16px;
+    margin-bottom: 0;
+  }
+}

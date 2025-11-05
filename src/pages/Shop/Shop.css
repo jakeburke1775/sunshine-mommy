@@ -11,7 +11,7 @@
   text-align: center;
   color: #935e43;
   font-size: 20px;
-  margin: 0;
+  margin: 0 0 8px 0;
 }
 
 /* Tab-based selector styles */
@@ -49,6 +49,7 @@
 }
 
 .product-name {
+  color: black;
   font-weight: bold;
   font-size: 12px;
 }
@@ -63,9 +64,13 @@
   color: white;
 }
 
+.selector-button.active .product-name {
+  color: white;
+}
+
 .popular-tag {
   position: absolute;
-  top: -12px;
+  top: -16px;
   left: 50%;
   transform: translateX(-50%);
   background: #ff6b6b;
@@ -213,57 +218,4 @@
 .order-button:disabled {
   opacity: 0.7;
   cursor: not-allowed;
-}
-
-/* Guarantee */
-.guarantee {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.guarantee p {
-  margin: 5px 0;
-  font-size: 13px;
-  color: #666;
-}
-
-/* Larger screens - slightly bigger sizing */
-@media (min-width: 1001px) {
-  .shop {
-    padding: 20px;
-    max-width: 600px;
-  }
-  
-  .shop h1 {
-    font-size: 24px;
-  }
-  
-  .product-details h2 {
-    font-size: 20px;
-  }
-  
-  .product-image {
-    max-width: 300px;
-    height: 180px;
-  }
-  
-  .features h3 {
-    font-size: 17px;
-  }
-  
-  .features li {
-    font-size: 14px;
-  }
-  
-  .price {
-    font-size: 30px;
-  }
-  
-  .order-button {
-    font-size: 16px;
-    padding: 16px 20px;
-  }
 }
