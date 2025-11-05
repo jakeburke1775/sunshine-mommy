@@ -102,6 +102,7 @@
   max-width: 250px;
   height: 150px;
   object-fit: cover;
+  object-position: center bottom;
   border-radius: 8px;
   margin: 0 auto 15px auto;
   display: block;

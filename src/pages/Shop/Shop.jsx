@@ -17,7 +17,7 @@ const Shop = () => {
       name: 'Petite',
       fullName: 'The Petite Mommy Box',
       price: '$110',
-      image: '/sunshine-mommy/petite-box.jpg',
+      image: '/sunshine-mommy/PetiteMommyBox.jpg',
       features: [
         'Cozy slippers',
         'Cooling pads',
@@ -35,7 +35,7 @@ const Shop = () => {
       name: 'Mommy',
       fullName: 'The Mommy Box',
       price: '$150',
-      image: '/sunshine-mommy/mommy-box.jpg',
+      image: '/sunshine-mommy/MommyBox.jpg',
       features: [
         'Everything in Petite',
         'Aromatherapy candle',
@@ -50,7 +50,7 @@ const Shop = () => {
       name: 'Deluxe',
       fullName: 'The Deluxe Mommy Box',
       price: '$185',
-      image: '/sunshine-mommy/deluxe-box.jpg',
+      image: '/sunshine-mommy/DeluxeMommyBox.jpg',
       features: [
         'Everything in Mommy Box',
         'Spa-quality robe',
@@ -77,7 +77,7 @@ const Shop = () => {
         {products.map((product) => (
           <button
             key={product.id}
-            className={`selector-button ${selectedProduct === product.id ? 'active' : ''} ${product.popular ? 'popular' : ''}`}
+            className={`selector-button ${selectedProduct === product.id ? 'active' : ''} ${product.popular ? 'popular' : ''} ${product.id === 'petite' ? 'petite' : ''}`}
             onClick={() => setSelectedProduct(product.id)}
           >
             <span className="product-name">{product.name}</span>
