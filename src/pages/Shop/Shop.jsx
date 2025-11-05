@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
-import styles from './Shop.module.css';
+import './Shop.css';
 
 // Initialize Stripe with your publishable key
 const stripePromise = loadStripe('pk_test_51SOqWZEORaL8eBQaFf3Xe7BXtL42ZZK252Cd6XSZDMS89k4YR0B4vbXcRc2JR8vwR5A5FzcFSJZLnE0gtfspPDU1008vOtc9xm');
@@ -67,50 +67,50 @@ const Shop = () => {
   const selectedProductData = products.find(p => p.id === selectedProduct);
 
   return (
-    <div className={styles.shop}>
+    <div className="shop">
       <h1>Choose Your Box</h1>
       
       {/* Product Selector */}
-      <div className={styles.productSelector}>
+      <div className="product-selector">
         {products.map((product) => (
           <button
             key={product.id}
-            className={`${styles.selectorButton} ${selectedProduct === product.id ? styles.active : ''} ${product.popular ? styles.popular : ''}`}
+            className={`selector-button ${selectedProduct === product.id ? 'active' : ''} ${product.popular ? 'popular' : ''}`}
             onClick={() => setSelectedProduct(product.id)}
           >
-            <span className={styles.productName}>{product.name}</span>
-            <span className={styles.productPrice}>{product.price}</span>
-            {product.popular && <span className={styles.popularTag}>Most Popular</span>}
+            <span className="product-name">{product.name}</span>
+            <span className="product-price">{product.price}</span>
+            {product.popular && <span className="popular-tag">Most Popular</span>}
           </button>
         ))}
       </div>
 
       {/* Selected Product Details */}
-      <div className={styles.productDetails}>
+      <div className="product-details">
         <h2>{selectedProductData.fullName}</h2>
         <img 
           src={selectedProductData.image} 
           alt={selectedProductData.fullName}
-          className={styles.productImage}
+          className="product-image"
         />
         
-        <div className={styles.features}>
+        <div className="features">
           <h3>What's Inside:</h3>
-          <ul className={selectedProductData.features.length > 4 ? styles.twoColumns : styles.oneColumn}>
+          <ul className={selectedProductData.features.length > 4 ? 'two-columns' : 'one-column'}>
             {selectedProductData.features.map((feature, index) => (
               <li key={index}>{feature}</li>
             ))}
           </ul>
         </div>
         
-        <div className={styles.orderSection}>
-          <div className={styles.pricing}>
-            <span className={styles.price}>{selectedProductData.price}</span>
-            <span className={styles.shipping}>+ Free Shipping</span>
+        <div className="order-section">
+          <div className="pricing">
+            <span className="price">{selectedProductData.price}</span>
+            <span className="shipping">+ Free Shipping</span>
           </div>
           
           <button 
-            className={styles.orderButton}
+            className="order-button"
             onClick={() => handleOrderNow(selectedProductData.paymentUrl)}
             disabled={loading}
           >

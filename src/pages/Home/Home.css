@@ -11,7 +11,7 @@
   margin-bottom: 15px;
 }
 
-.orderButton {
+.order-button {
   background: linear-gradient(135deg, #935e43, #7a4d36);
   color: white;
   border: none;
@@ -25,7 +25,7 @@
   transition: all 0.3s ease;
 }
 
-.orderButton:hover {
+.order-button:hover {
   transform: translateY(-2px);
   /* box-shadow: 0 6px 20px rgba(147, 94, 67, 0.4); */
   background: linear-gradient(135deg, #7a4d36, #6a3f2a);

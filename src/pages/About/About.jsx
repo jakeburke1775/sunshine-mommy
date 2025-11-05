@@ -1,8 +1,8 @@
-import styles from './About.module.css';
+import './About.css';
 
 const About = () => {
   return (
-    <div className={styles.about}>
+    <div className="about">
       <h1>About Us</h1>
       <p>Sunshine Mommy was born from a simple observation: while every expecting family receives countless gifts for baby, the incredible woman going through pregnancy and childbirth often gets overlooked.</p>
       
